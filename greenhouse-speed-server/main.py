@@ -1,4 +1,5 @@
 import uvicorn
+import socket
 from typing import Union
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
@@ -14,9 +15,22 @@ def read_root():
 def read_root(file: str):
     return "./src/" + file
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/data/on_seconds")
+def serve_on_seconds():
+    return 5
+
+@app.get("/data/off_seconds")
+def serve_off_seconds():
+    return 5
+
+@app.post("/data/on_seconds")
+def set_on_seconds():
+    return 5
+
+@app.post("/data/on_seconds")
+def set_off_seconds():
+    return 5
+
 
 if __name__ == "__main__":
-   uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+   uvicorn.run("main:app", host="129.123.134.198", port=8000, reload=True)

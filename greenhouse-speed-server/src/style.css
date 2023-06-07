@@ -1,3 +1,52 @@
+/* primary: #4CAF50
+   primary light: #C8E6C9
+   primary dark: #388E3C
+   accent: #795548
+   text: #212121
+   secondary text: #757575
+*/
+
 * {
-    background-color: aqua;
+    font-family: sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    color: #212121;
+}
+
+header {
+    font-size: x-large;
+    font-weight: bold;
+    background-color: #4CAF50;
+    margin: 0;
+    padding: 3% 5% 3% 5%;
+    border-top: 6px solid #388E3C;
+}
+
+main {
+    margin: 5% auto auto auto;
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.box {
+    border-top: 5px solid #4CAF50;
+    background-color: #C8E6C9;
+    padding: 1% 3% 2% 3%;
+}
+
+.mini-header {
+    font-weight: bold;
+    background-color: inherit;
+    padding-bottom: 5px;
+}
+
+footer {
+    color: white;
+    background-color: #212121;
+    padding: 1% 3% 1% 3%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
