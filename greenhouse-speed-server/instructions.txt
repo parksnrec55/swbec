@@ -1,0 +1,9 @@
+Hello! This program is meant to control Greenhouse RABR speed remotely. 
+
+Installation:
+  - The Raspberry Pi should be registered with the Bluezone network and given a hostname. Use a name that is easy to remember.
+  - This Python program should be set to run on startup on the Raspberry Pi.
+
+Usage:
+  - After setup, you will be able to login to the control panel from anywhere by typing http://hostname.bluezone.usu.edu into your browser's address bar - this only works
+    while you are on the USU network. This means that you can log in from any campus or lab building, or from anywhere using the USU VPN (at vpn.usu.edu)
