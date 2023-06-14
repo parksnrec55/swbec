@@ -9,11 +9,11 @@ app = FastAPI()
 
 @app.get("/", response_class=FileResponse)
 def read_root():
-    return "./src/index.html"
+    return "/home/parker/code/swbec/greenhouse-speed-server/src/index.html"
 
 @app.get("/{file}", response_class=FileResponse)
 def read_root(file: str):
-    return "./src/" + file
+    return "/home/parker/code/swbec/greenhouse-speed-server/src/" + file
 
 @app.get("/data/on_seconds")
 def serve_on_seconds():
@@ -21,16 +21,22 @@ def serve_on_seconds():
 
 @app.get("/data/off_seconds")
 def serve_off_seconds():
-    return 5
+    return 10
 
-@app.post("/data/on_seconds")
-def set_on_seconds():
-    return 5
+@app.post("/data/set_on_seconds")
+def set_on_seconds(seconds: int = 5):
+    return {
+        "status": "success",
+        "on_seconds": seconds
+    }
 
-@app.post("/data/on_seconds")
-def set_off_seconds():
-    return 5
+@app.post("/data/set_on_seconds")
+def set_off_seconds(seconds: int = 10):
+    return {
+        "status": "success",
+        "on_seconds": seconds
+    }
 
 
 if __name__ == "__main__":
-   uvicorn.run("main:app", host="129.123.134.198", port=8000, reload=True)
+   uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
